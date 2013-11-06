@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts SYSTEM "struts-2.0.dtd" >
+
+<struts>
+
+	<constant name="struts.custom.i18n.resources" value="message"></constant>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+
+	<package name="test" namespace="/" extends="struts-default">
+
+
+		<!--http://my.oschina.net/fdblog/blog/161306 -->
+		<default-action-ref name="index" />
+
+		<action name="index">
+			<result name="success">/index.jsp</result>
+		</action>
+
+		<action name="userAction" class="com.dqq.formcreator.action.UserAction"
+			method="insert">
+			<result name="success">/success.jsp</result>
+			<result name="fail">/index.jsp</result>
+		</action>
+
+	</package>
+
+</struts>

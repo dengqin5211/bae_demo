@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE configuration
+	    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+	<configuration>
+		<settings>
+			<!-- changes from the defaults -->
+			<setting name="lazyLoadingEnabled" value="false" />
+		</settings>
+		<typeAliases>
+			<!--这里给实体类取别名，方便在mapper配置文件中使用-->
+			<typeAlias alias="User" type="com.dqq.formcreator.po.User"/>
+		</typeAliases>
+		<environments default="development">
+			<environment id="development">
+				<transactionManager type="JDBC"/>
+				<dataSource type="POOLED">
+					<property name="driver" value="com.mysql.jdbc.Driver"/>
+					<property name="url" value="jdbc:mysql://sqld.duapp.com:4050/ByfhZescBGFXSHRSQqRL"/>
+					<property name="username" value="qn8cUQ4Q3cmURexI5kPY9iot"/>
+					<property name="password" value="ED5nsQ8Kkr1vwGuYQqoIN2OhvG6eprsR"/>
+				</dataSource>
+			</environment>
+		</environments>
+
+		<!--这里添加的是执行CRUD操作的接口对应的配置文件(xml文件)-->
+		<mappers>
+			<mapper resource="com/dqq/formcreator/po/User.xml"/>
+		</mappers>
+	</configuration>
